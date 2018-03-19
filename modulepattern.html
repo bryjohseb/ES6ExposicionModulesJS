@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+ <h1>
+   Aqui va algo a ver que pasa
+   <label> Conersion Value<input type="number" id="number"/></label>
+   <label>From: <select name="select1" id="select1">
+    <option value="Celsius">Celsius</option>
+    <option value="Farenheit" selected>Farenheit</option>
+    </select>
+   </label>
+   <label>To: <select name="select2" id="select2">
+    <option value="Celsius" selected>Celsius</option>
+    <option value="Farenheit">Farenheit</option>
+    </select>
+   </label>
+   <button id="btnid">
+     Module Pattern
+   </button>
+ </h1>
+ <script>
+
+ document.getElementById("btnid").addEventListener("click", myFunction);
+
+function myFunction() {
+
+var number = document.getElementById("number").value;
+var from = document.getElementById("select1");
+var to = document.getElementById("select2");
+
+/*let number = $("#number").val();
+let m1 = $('#select1').val();
+let m2 = $('#select2').val();
+*/  //Selectores de Jquery
+
+
+console.log(number + " " + from.options[from.selectedIndex].value + " " + to.options[to.selectedIndex].value);
+    // Outputs: Where in the world is Paul Irish today?
+modulePerClass.showValues();
+
+// Outputs: Caching is: enabled
+modulePerClass.updateMyConfig(from.options[from.selectedIndex].value,to.options[to.selectedIndex].value, number);
+
+modulePerClass.showValues();*/
+
+
+/*console.log(number + " " + m1  + " " + m2);
+    // Outputs: Where in the world is Paul Irish today?
+modulePerClass.showValues();
+modulePerClass.updateMyConfig(m1,m2, number);
+modulePerClass.showValues();*/ //Codigo para selectores de Jquery
+
+}
+
+ var modulePerClass = {
+
+  message: "The conversion will be realized",
+  value: 0,
+
+  // object literals can contain properties and methods.
+  // e.g we can define a further object for module configuration:
+  conversionData: {
+    from: "",
+    to: "",
+	result: 0
+  },
+
+  // a very basic method
+  showValues: function () {
+    console.log( this.message + " from " + this.conversionData.from + " to " + this.conversionData.to + " and the result is " + this.conversionData.result  );
+    //   $("h1").append("<b>"+this.conversionData.result+"</b>"); Mostrar resultado en la página
+
+  },
+
+  // override the current configuration
+  updateMyConfig: function( fromValue, toValue, value ) {
+  this.value = value;
+	this.conversionData.from = fromValue;
+	this.conversionData.to = toValue;
+	this.conversionData.result = this.conversion();
+  },
+   conversion: function () {
+	if(this.conversionData.from == "Celsius" && this.conversionData.to == "Farenheit"){
+  	console.log("Convert Data from Celsius to Farenheit");
+    return (this.value * (9/5) + 32);
+	}
+	if(this.conversionData.from == "Farenheit" && this.conversionData.to == "Celsius"){
+  	console.log("Convert Data from Farenheit to Celsius");
+    return ((this.value - 32) * (5/9));
+	}
+	return 0;
+   },
+};
+ </script>
+</body>
+</html>
