@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 | LAB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>    
+    <header>
+        <div class="jumbotron">
+            <style type="type/css">
+                .jumbotron {
+                    margin-bottom: 0px;
+                    background-image: url("es6.png");            
+                    background-position: 0% 45%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    color: white;
+                    text-shadow: black 0.3em 0.3em 0.3em;
+                    height: 250px;
+                }
+            </style>
+        </div>
+        <br/>
+        <br/>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4><strong>1) Variables</strong></h4>
+                <span>Obtener e imprimir el valor de una campo con Variables ES6:</span><br/><br/>
+                <input type="text" id="text_id" class="form-control form-control-sm"/><br/>
+                <input type="submit" name="btn_enviar" class="btn btn-outline-primary btn-sm" onclick="Variables()"/><br/>
+            </div>
+            <div class="col-sm-6">
+                <h4><strong>2) Clases</strong></h4>
+                <span>Calcular el are de un poligono usando Clases:</span><br/><br/>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Width: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="number" id="width_number" class="form-control form-control-sm"/><br/>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Height: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="number" id="height_number" class="form-control form-control-sm"/><br/>
+                    </div>                    
+                </div>
+                <input type="submit" name="btn_enviar" class="btn btn-outline-primary btn-sm" onclick="CalcularArea()"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4><strong>3) Funciones con parametros de retornos</strong></h4>
+                <span>vamos a ver que es la vara:</span><br/><br/>                
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Nombre: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="name" class="form-control form-control-sm"/><br/>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Edad: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="number" id="edad" class="form-control form-control-sm"/><br/>
+                    </div>                    
+                </div>
+                <input type="submit" name="btn_enviar" class="btn btn-outline-primary btn-sm" onclick="ConParametrosRetorno()"/><br/>
+            </div>
+            <div class="col-sm-6">
+                <h4><strong>2) Jquery</strong></h4>
+                <span>Calcular el are de un poligono usando Clases:</span><br/><br/>
+                <button class="btn btn-outline-primary btn-sm"> Iniciar Animacion </button>
+
+                <div id="jquery"></div>
+            </div>
+        </div>
+    </div>    
+</body>   
+    <script src "datos.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
