@@ -57,8 +57,4 @@ C = {
         this.view.update(this.model);
     }
 }
-//document.getElementById("btnid").addEventListener("click", myFunction);
 document.querySelector("#btnid").addEventListener("click", () => C.handler.call(C)); 
-/*document.querySelector("#btnid").addEventListener("click", function(){
-    C.handler.call(C);
-}); */

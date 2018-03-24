@@ -54,9 +54,9 @@
   var View = {}, Controller = {};
   
   View = {
-      result : document.querySelector("#result"),    
+      result : $("#result"),    
       update: function(Model){		
-          this.result.value = Model.conversionData.result;
+          this.result.val(Model.conversionData.result);
       }
   }
   
@@ -64,15 +64,15 @@
       model: new Conversion(),
       view: View,
       handler: function(){
-          var number = document.getElementById("number").value;
-          var from = document.getElementById("select1");
-          var to = document.getElementById("select2");
+          var number = $("#number");
+          var from = $("#select1");
+          var to = $("#select2");
   
-          console.log(number + " " + from.options[from.selectedIndex].value + " " + to.options[to.selectedIndex].value);
+          console.log(number[0].value + " " + from[0].value + " " + to[0].value);
           
-          this.model.value = number;
-          this.model.conversionData.from = from.options[from.selectedIndex].value;
-          this.model.conversionData.to = to.options[to.selectedIndex].value;
+          this.model.value = number[0].value;
+          this.model.conversionData.from = from[0].value;
+          this.model.conversionData.to = to[0].value;
           
           this.model.conversion().then(function(success){  
             let modelaux = new Conversion();
@@ -84,7 +84,7 @@
       }
   }
   //document.getElementById("btnid").addEventListener("click", myFunction);
-  document.querySelector("#btnid").addEventListener("click", () => C.handler.call(C)); 
+  $("#btnid").bind("click", () => C.handler.call(C)); 
   /*document.querySelector("#btnid").addEventListener("click", function(){
       C.handler.call(C);
   }); */
