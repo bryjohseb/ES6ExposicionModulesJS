@@ -19,7 +19,7 @@
       this.conversionData.to = toValue;
       this.conversionData.result = this.conversion();	
     };
-     conversion(){
+     /*conversion(){        
       if(this.conversionData.from == "Celsius" && this.conversionData.to == "Farenheit"){
         console.log("Convert Data from Celsius to Farenheit");
       return (this.value * (9/5) + 32);
@@ -29,7 +29,25 @@
       return ((this.value - 32) * (5/9));
       }
       return 0;
-     };
+     };*/
+     conversion() {  
+         var from = this.conversionData.from;
+         var to = this.conversionData.to; 
+         var value = this.value; 
+        var promise = new Promise(function (success, error) {                      
+            if( from == "Celsius" && to == "Farenheit"){
+                console.log("Convert Data from Celsius to Farenheit");
+                success(value * (9/5) + 32);
+              }
+            if(from == "Farenheit" && to == "Celsius"){
+                console.log("Convert Data from Farenheit to Celsius");
+                success((value - 32) * (5/9));
+            }
+            //error(Error(0));
+        });
+        return promise;
+     }    
+     
   };
 
 
@@ -55,8 +73,14 @@
           this.model.value = number;
           this.model.conversionData.from = from.options[from.selectedIndex].value;
           this.model.conversionData.to = to.options[to.selectedIndex].value;
-          this.model.conversionData.result = this.model.conversion();
-          this.view.update(this.model);
+          
+          this.model.conversion().then(function(success){  
+            let modelaux = new Conversion();
+            modelaux.conversionData.result = success;                           
+            C.view.update(modelaux);
+          }, function(error){
+            console.log(error);
+          });        
       }
   }
   //document.getElementById("btnid").addEventListener("click", myFunction);
