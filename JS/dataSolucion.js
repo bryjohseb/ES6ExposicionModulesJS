@@ -31,9 +31,9 @@
       return 0;
      };*/
      conversion() {  
-         var from = this.conversionData.from;
-         var to = this.conversionData.to; 
-         var value = this.value; 
+         let from = this.conversionData.from;
+         let to = this.conversionData.to; 
+         let value = this.value; 
         var promise = new Promise(function (success, error) {                      
             if( from == "Celsius" && to == "Farenheit"){
                 console.log("Convert Data from Celsius to Farenheit");
